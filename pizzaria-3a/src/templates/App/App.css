@@ -1,0 +1,16 @@
+footer{
+    background-color: rgb(221, 143, 54);
+    padding: 10px;
+    text-align: center;
+
+}
+
+.menu{
+    background-color: rgb(172, 82, 30);
+    
+  }
+
+
+  .menu a {
+color: aqua;
+  }
