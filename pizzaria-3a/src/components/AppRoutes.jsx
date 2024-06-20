@@ -8,6 +8,10 @@ import Produto from "../templates/Produto/Produto"
 import Usuario from "../templates/Usuario/Usuario"
 import ProdutosLista from "../templates/Produto/ProdutosLista" 
 import UsuariosLista from "../templates/Usuario/UsuariosLista"
+import UsuarioNovo from "../templates/Usuario/UsuarioNovo"
+import ProdutoNovo from "../templates/Produto/ProdutoNovo"
+import ProdutoEditar from "../templates/Produto/ProdutoEditar"
+import UsuarioEditar from "../templates/Usuario/UsuarioEditar"
 const AppRoutes = () => {
 
     return (
@@ -20,9 +24,15 @@ const AppRoutes = () => {
             <Route path="/mensagem" element={<Mensagem />} />
             <Route path="/produto" element={<Produto />} />
             <Route path="/produtoslista" element={<ProdutosLista />} />
-            <Route path="/usuario" element={<Usuario />} />
-            <Route path="/usuariolista" element={<UsuariosLista />} />
+            <Route path="/produtonovo" element={<ProdutoNovo />} />
+            <Route path="/produtoeditar" element={<ProdutoEditar />} />
 
+            <Route path="/usuario" element={<Usuario/>} />
+            <Route path="/usuariolista" element={<UsuariosLista/>} />
+            <Route path="/usuarionovo" element={<UsuarioNovo/>} />
+            <Route path="/usuarioeditar" element={<UsuarioEditar/>} />
+          
+            
             </Routes>
         </div>
     )

@@ -1,9 +1,16 @@
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import Sidebar from "../../components/Menu/Sidebar"
 import Header from "../../components/Header/Header"
 import logo from '../../assets/images/logo.png'
 
+
 const UsuariosLista = () => {
+    const navigate = useNavigate();
+    const goTO = () => {
+        navigate('/usuarioeditar')
+    }
+
+
 
     return (
         <div className="d-flex">
@@ -39,7 +46,7 @@ const UsuariosLista = () => {
                                     <td>@mdo</td>
                                     <td>@mdo</td>
                                     <td>
-                                        <button type="button"
+                                        <button type="button" onClick={() => goTO()}
                                             className="btn btn-sm btn-warning">
                                             <i className="bi bi-envelope-open me-2"></i> Abrir
                                         </button>

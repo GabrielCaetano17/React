@@ -12,14 +12,18 @@ const Produto = () =>{
             <div className="p-3 w-100">
             <Header 
                 goto={'/home'}
-                title={'Home'}
+                title={'home'}
                 logo={logo}
                 />
             <section className="m-2 p-2 shadow-lg">
-                <div>
+                <div  className="d-flex justify-content-around">
                     <Link to={'/produtoslista'}
-                    className="btn btn-lg btn-warning">
+                    className="btn btn-lg btn-primary">
                         Lista de Produto
+                    </Link>
+                    <Link to={'/produtonovo'}
+                    className="btn btn-lg btn-warning">
+                        Novo Produto
                     </Link>
                 </div>
 
