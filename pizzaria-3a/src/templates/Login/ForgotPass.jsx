@@ -1,18 +1,11 @@
 
-import { Link } from "react-router-dom"
-
-const ForgotPass = () =>{
+const ForgotPass = () => {
 
     return(
         <div>
-            <Link to={'/'} className="btn btn-danger">
-                Voltar
-            </Link>
-
+            <h1>Recuperar Senha</h1>
         </div>
-
     )
-
 }
 
 export default ForgotPass

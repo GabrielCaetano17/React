@@ -1,18 +1,18 @@
 import { Link, useNavigate } from "react-router-dom"
-import Sidebar from "../../components/Menu/Sidebar"
 import Header from "../../components/Header/Header"
-import logo from '../../assets/images/logo.png'
+import Sidebar from '../../components/Menu/Sidebar'
+import logo from '../../assets/images/home.png'
 
 const ProdutosLista = () => {
 
     const navigate = useNavigate();
-    const goTO = () => {
+
+    const goTo = () => {
         navigate('/produtoeditar')
     }
 
     return (
         <div className="d-flex">
-
             <Sidebar />
             <div className="p-3 w-100">
                 <Header
@@ -27,7 +27,7 @@ const ProdutosLista = () => {
                                 <tr>
                                     <th scope="col">ID</th>
                                     <th scope="col">Nome</th>
-                                    <th scope="col">Codigo</th>
+                                    <th scope="col">Código</th>
                                     <th scope="col">Preço</th>
                                     <th scope="col">Categoria</th>
                                     <th scope="col">Status</th>
@@ -36,16 +36,16 @@ const ProdutosLista = () => {
                             </thead>
                             <tbody>
                                 <tr>
-                                    <th scope="row">1</th>
+                                    <td scope="row">1</td>
                                     <td>Mark</td>
                                     <td>Otto</td>
                                     <td>@mdo</td>
                                     <td>@mdo</td>
                                     <td>@mdo</td>
                                     <td>
-                                        <button type="button" onClick={() => goTO()}
+                                        <button type="button" onClick={() => goTo()}
                                             className="btn btn-sm btn-warning">
-                                            <i className="bi bi-envelope-open me-2"></i> Abrir
+                                            <i className="bi bi-envelope-open me-2"></i>Abrir
                                         </button>
                                     </td>
                                 </tr>
@@ -54,11 +54,8 @@ const ProdutosLista = () => {
                     </div>
                 </section>
             </div>
-
         </div>
-
     )
-
 }
 
 export default ProdutosLista

@@ -1,27 +1,23 @@
 import { Link } from "react-router-dom"
-import Sidebar from "../../components/Menu/Sidebar"
 import Header from "../../components/Header/Header"
-import logo from '../../assets/images/logo.png'
+import Sidebar from '../../components/Menu/Sidebar'
+import logo from '../../assets/images/home.png'
 
-const Home = () =>{
+const Home = () => {
 
-    return(
+    return (
         <div className="d-flex">
-
-            <Sidebar />
-            <div className="p-3 w-100">
-              <Header 
-                goto={'/home'}
-                title={'Home'}
-                logo={logo}
-                />
-              <h2>Conteúdo Home</h2>
-            </div>
-         
+           <Sidebar />
+           <div className="p-3 w-100">
+                <Header 
+                    goto={'/home'}
+                    title={'Home'}
+                    logo={logo}
+                    />
+                <h2>Conteúdo Home</h2>
+           </div>
         </div>
-
     )
-
 }
 
 export default Home

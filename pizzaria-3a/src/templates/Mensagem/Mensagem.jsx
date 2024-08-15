@@ -1,13 +1,31 @@
-import { Link } from "react-router-dom"
-import Sidebar from "../../components/Menu/Sidebar"
+import { Link, useNavigate } from "react-router-dom"
 import Header from "../../components/Header/Header"
-import logo from '../../assets/images/logo.png'
+import Sidebar from '../../components/Menu/Sidebar'
+import logo from '../../assets/images/home.png'
+import { useState } from "react"
+import { useEffect } from "react"
+import MensagemService from "../../services/MensagemService"
 
 const Mensagem = () => {
-
+    const navigate = useNavigate();
+    const goTo = () => {
+        navigate('/mensagemler')
+    }
+    const [mensagens, setMensagens] = useState([]);
+    useEffect(() => {
+        MensagemService.findAll().then(
+            (response) => {
+                const mensagens = response.data;
+                setMensagens(mensagens);
+            }
+        ).catch((error) => {
+            console.log(error);
+        })
+    }, []);
+    
+    
     return (
         <div className="d-flex">
-
             <Sidebar />
             <div className="p-3 w-100">
                 <Header
@@ -21,7 +39,7 @@ const Mensagem = () => {
                             <thead>
                                 <tr>
                                     <th scope="col">ID</th>
-                                    <th scope="col">DATA</th>
+                                    <th scope="col">Data</th>
                                     <th scope="col">Emissor</th>
                                     <th scope="col">Email</th>
                                     <th scope="col">Status</th>
@@ -29,19 +47,21 @@ const Mensagem = () => {
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                    <td>@mdo</td>
+                                {mensagens?.map((mensagem) => (
+                                <tr key={mensagem.id}>
+                                    <td scope="row">{mensagem.id}</td>
+                                    <td>{mensagem.dataMensagem}</td>
+                                    <td>{mensagem.emissorMensagem}</td>
+                                    <td>{mensagem.email}</td>
+                                    <td>{mensagem.statusMensagem}</td>
                                     <td>
                                         <button type="button"
                                                 className="btn btn-sm btn-warning">
-                                           <i className="bi bi-envelope-open me-2"></i> Abrir 
+                                            <i className="bi bi-envelope-open me-2"></i>Abrir
                                         </button>
                                     </td>
                                 </tr>
+                                ))}
                             </tbody>
                         </table>
                     </div>
@@ -49,7 +69,6 @@ const Mensagem = () => {
             </div>
         </div>
     )
-
 }
 
 export default Mensagem
